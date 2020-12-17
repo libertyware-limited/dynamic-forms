@@ -19,7 +19,12 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "N2M3ZTBmYmYtNjM3MS00MWI2LWFmODAtYWVmNWYxNzg0YTJlfHJlYWQtd3JpdGU=",
-        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "cacheableOperations": [
+          "build",
+          "test",
+          "lint",
+          "e2e"
+        ],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -31,14 +36,45 @@
     },
     "ng-json-e2e": {
       "tags": [],
-      "implicitDependencies": ["ng-json"]
+      "implicitDependencies": [
+        "ng-json"
+      ]
     },
     "react-example": {
       "tags": []
     },
     "react-example-e2e": {
       "tags": [],
-      "implicitDependencies": ["react-example"]
+      "implicitDependencies": [
+        "react-example"
+      ]
+    },
+    "core": {
+      "tags": []
+    },
+    "decorators": {
+      "tags": []
+    },
+    "common": {
+      "tags": []
+    },
+    "angular-form-builder": {
+      "tags": []
+    },
+    "angular-form-gen": {
+      "tags": [
+        "angular"
+      ]
+    },
+    "angular-angular-material": {
+      "tags": [
+        "angular"
+      ]
+    },
+    "react-forms": {
+      "tags": [
+        "react"
+      ]
     }
   }
 }

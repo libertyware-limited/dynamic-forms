@@ -10,11 +10,40 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ngx-form/core": [
+        "libs/core/src/index.ts"
+      ],
+      "@ngx-form/decorators": [
+        "libs/decorators/src/index.ts"
+      ],
+      "@ngx-form/common": [
+        "libs/common/src/index.ts"
+      ],
+      "@ngx-form/ngx-builder": [
+        "libs/angular/form-builder/src/index.ts"
+      ],
+      "@ngx-form/ngx-form": [
+        "libs/angular/form-gen/src/index.ts"
+      ],
+      "@ngx-form/ngx-ng-material": [
+        "libs/angular/angular-material/src/index.ts"
+      ],
+      "@ngx-form/react-form": [
+        "libs/react/forms/src/index.ts"
+      ]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

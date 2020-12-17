@@ -5,7 +5,7 @@
       "projectType": "application",
       "root": "apps/ng-json",
       "sourceRoot": "apps/ng-json/src",
-      "prefix": "json-ui",
+      "prefix": "ngx-form",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -20,7 +20,9 @@
               "apps/ng-json/src/favicon.ico",
               "apps/ng-json/src/assets"
             ],
-            "styles": ["apps/ng-json/src/styles.scss"],
+            "styles": [
+              "apps/ng-json/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,7 +83,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/ng-json"],
+          "outputs": [
+            "coverage/apps/ng-json"
+          ],
           "options": {
             "jestConfig": "apps/ng-json/jest.config.js",
             "passWithNoTests": true
@@ -110,7 +114,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/ng-json-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/ng-json-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -122,7 +128,9 @@
       "architect": {
         "build": {
           "builder": "@nrwl/web:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/react-example",
             "index": "apps/react-example/src/index.html",
@@ -133,7 +141,9 @@
               "apps/react-example/src/favicon.ico",
               "apps/react-example/src/assets"
             ],
-            "styles": ["apps/react-example/src/styles.scss"],
+            "styles": [
+              "apps/react-example/src/styles.scss"
+            ],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -176,12 +186,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/react-example/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/react-example/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/react-example"],
+          "outputs": [
+            "coverage/apps/react-example"
+          ],
           "options": {
             "jestConfig": "apps/react-example/jest.config.js",
             "passWithNoTests": true
@@ -210,7 +224,296 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/react-example-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/react-example-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "core": {
+      "root": "libs/core",
+      "sourceRoot": "libs/core/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/core"
+          ],
+          "options": {
+            "jestConfig": "libs/core/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/core",
+            "tsConfig": "libs/core/tsconfig.lib.json",
+            "packageJson": "libs/core/package.json",
+            "main": "libs/core/src/index.ts",
+            "assets": [
+              "libs/core/*.md"
+            ]
+          }
+        }
+      }
+    },
+    "decorators": {
+      "root": "libs/decorators",
+      "sourceRoot": "libs/decorators/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/decorators/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/decorators"
+          ],
+          "options": {
+            "jestConfig": "libs/decorators/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/decorators",
+            "tsConfig": "libs/decorators/tsconfig.lib.json",
+            "packageJson": "libs/decorators/package.json",
+            "main": "libs/decorators/src/index.ts",
+            "assets": [
+              "libs/decorators/*.md"
+            ]
+          }
+        }
+      }
+    },
+    "common": {
+      "root": "libs/common",
+      "sourceRoot": "libs/common/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/common/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/common"
+          ],
+          "options": {
+            "jestConfig": "libs/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/common",
+            "tsConfig": "libs/common/tsconfig.lib.json",
+            "packageJson": "libs/common/package.json",
+            "main": "libs/common/src/index.ts",
+            "assets": [
+              "libs/common/*.md"
+            ]
+          }
+        }
+      }
+    },
+    "angular-form-builder": {
+      "projectType": "library",
+      "root": "libs/angular/form-builder",
+      "sourceRoot": "libs/angular/form-builder/src",
+      "prefix": "ngx-form",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/angular/form-builder/tsconfig.lib.json",
+            "project": "libs/angular/form-builder/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular/form-builder/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular/form-builder/src/**/*.ts",
+              "libs/angular/form-builder/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/angular/form-builder"
+          ],
+          "options": {
+            "jestConfig": "libs/angular/form-builder/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-form-gen": {
+      "projectType": "library",
+      "root": "libs/angular/form-gen",
+      "sourceRoot": "libs/angular/form-gen/src",
+      "prefix": "ngx-form",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/angular/form-gen/tsconfig.lib.json",
+            "project": "libs/angular/form-gen/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular/form-gen/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular/form-gen/src/**/*.ts",
+              "libs/angular/form-gen/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/angular/form-gen"
+          ],
+          "options": {
+            "jestConfig": "libs/angular/form-gen/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-angular-material": {
+      "projectType": "library",
+      "root": "libs/angular/angular-material",
+      "sourceRoot": "libs/angular/angular-material/src",
+      "prefix": "ngx-form",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/angular/angular-material/tsconfig.lib.json",
+            "project": "libs/angular/angular-material/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/angular/angular-material/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/angular/angular-material/src/**/*.ts",
+              "libs/angular/angular-material/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/angular/angular-material"
+          ],
+          "options": {
+            "jestConfig": "libs/angular/angular-material/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-forms": {
+      "root": "libs/react/forms",
+      "sourceRoot": "libs/react/forms/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/react/forms/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/react/forms",
+            "tsConfig": "libs/react/forms/tsconfig.lib.json",
+            "project": "libs/react/forms/package.json",
+            "entryFile": "libs/react/forms/src/index.ts",
+            "external": [
+              "react",
+              "react-dom"
+            ],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/react/forms"
+          ],
+          "options": {
+            "jestConfig": "libs/react/forms/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
@@ -236,7 +539,8 @@
       "e2eTestRunner": "cypress"
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     },
     "@nrwl/angular:component": {
       "style": "scss"
@@ -256,5 +560,5 @@
       }
     }
   },
-  "defaultProject": "ng-json"
+  "defaultProject": "react-example"
 }
