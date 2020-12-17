@@ -126,3 +126,14 @@
   width: 16px;
   margin-right: 4px;
 }
+
+.app :global(.input) {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+}
+
+.app :global(.form-group) {
+  display: flex;
+  flex-direction: column;
+}

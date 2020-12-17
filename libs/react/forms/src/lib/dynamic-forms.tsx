@@ -1,5 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 
+import styles from './style.module.scss';
 import './dynamic-forms.module.scss';
 import { FormView } from './models/form-view';
 import { FormData } from './models/data';
@@ -28,7 +29,6 @@ export function DynamicForms(props: DynamicFormsProps) {
   const [form, setForm] = useState(mapping());
 
   const onSubmit = (value) => {
-    debugger;
     props.onSubmit(value)
   }
 
@@ -43,9 +43,9 @@ export function DynamicForms(props: DynamicFormsProps) {
             )
           } else {
             return (
-              <div key={index}>
+              <div className="form-group" key={index}>
+                <input  className="input" type={item.type} name={item.name} defaultValue={item.value}></input>
                 <label htmlFor={item.name}>{ item.label }</label>
-                <input type={item.type} name={item.name} onChange={() => {}} defaultValue={item.value}></input>
               </div>
             )
           }
